@@ -1,12 +1,10 @@
 <?php
-class Book
-{
+class Book{
     // TODO: Add properties as Private
     private $title;
     private $availableCopies;
 
-    public function __construct($title, $availableCopies)
-    {
+    public function __construct($title, $availableCopies){
         // TODO: Initialize properties
         $this->title = $title;
         $this->availableCopies = $availableCopies;
@@ -14,23 +12,20 @@ class Book
 
     // TODO: Add getTitle method
 
-    function getTitle()
-    {
+    function getTitle(){
         return $this->title;
     }
 
 
     // TODO: Add getAvailableCopies method
 
-    function getAvailableCopies()
-    {
+    function getAvailableCopies(){
         return $this->availableCopies;
     }
 
     // TODO: Add borrowBook method
 
-    function borrowBook()
-    {
+    function borrowBook(){
         if ($this->availableCopies <= 0) {
             throw new Exception("Number must be greater than 0");
         }else{
@@ -39,42 +34,36 @@ class Book
     }
 
     // TODO: Add returnBook method
-    function returnBook()
-    {
+    function returnBook(){
         $this->availableCopies++;
     }
 }
 
-class Member
-{
+class Member{
     // TODO: Add properties as Private
 
     private $name;
 
-    public function __construct($name)
-    {
+    public function __construct($name){
         // TODO: Initialize properties
         $this->name = $name;
     }
 
     // TODO: Add getName method
 
-    public function getName()
-    {
+    public function getName(){
         return $this->name;
     }
 
     // TODO: Add borrowBook method
 
-    public function borrowBook($book)
-    {
+    public function borrowBook($book){
         $book->borrowBook();
     }
 
     // TODO: Add returnBook method
 
-    public function returnBook($book)
-    {
+    public function returnBook($book){
         $book->returnBook();
     }
 }
